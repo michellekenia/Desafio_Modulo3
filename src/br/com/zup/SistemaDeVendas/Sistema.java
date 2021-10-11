@@ -27,7 +27,7 @@ public class Sistema {
         return Servico_Vendedor.cadastrarVendedor(nome, CPF, email);
     }
 
-    public static Cliente cadastrarCliente() {
+    public static Cliente cadastrarCliente() throws Exception {
         String nome = capturarDados("Digite o nome do cliente: ").nextLine();
         String CPF = capturarDados("Digite o CPF do cliente: ").nextLine();
         String email = capturarDados("Digite o e-mail do cliente: ").nextLine();
