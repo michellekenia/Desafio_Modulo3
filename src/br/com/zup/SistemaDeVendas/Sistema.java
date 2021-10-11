@@ -66,11 +66,9 @@ public class Sistema {
         return Servico_Venda.cadastrarVenda(cliente, vendedor, valor, data);
     }
 
-    public void exibirListaDeVendedores() {
-        System.out.println(Servico_Vendedor.getListaDeVendedores());
+    public void exibirVendedores() {
+        Servico_Vendedor.exibirListaDeVendedores();
     }
-
-
 
 
     public static void executar() {

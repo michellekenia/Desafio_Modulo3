@@ -18,4 +18,9 @@ public class Servico_Vendedor {
         return listaDeVendedores;
     }
 
+    public static void exibirListaDeVendedores() {
+        System.out.println(listaDeVendedores);
+
+    }
+
 }
