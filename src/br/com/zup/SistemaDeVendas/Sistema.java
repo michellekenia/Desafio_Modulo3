@@ -10,7 +10,7 @@ public class Sistema {
     }
 
     public static void menu() {
-        System.out.println("Olá, você está no sistema da Loja de Discos Championship Vinyl");
+        System.out.println("Olá, você está no sistema da Loja de Discos Championship Vinyl.");
         System.out.println("Digite 1 para cadastrar um vendedor");
         System.out.println("Digite 2 para cadastrar um cliente");
         System.out.println("Digite 3 para cadastrar uma venda");
@@ -66,12 +66,19 @@ public class Sistema {
         return Servico_Venda.cadastrarVenda(cliente, vendedor, valor, data);
     }
 
+    public void exibirListaDeVendedores() {
+        System.out.println(Servico_Vendedor.getListaDeVendedores());
+    }
+
+
+
+
     public static void executar() {
         boolean menu = true;
 
         while (menu) {
             menu();
-            int opcaoUsuario = capturarDados("Digite a opção desejada").nextInt();
+            int opcaoUsuario = capturarDados("Digite a opção desejada.").nextInt();
 
             if (opcaoUsuario == 1) {
                 Cliente cliente = cadastrarCliente();
@@ -80,9 +87,19 @@ public class Sistema {
             } else if (opcaoUsuario == 2) {
                 Vendedor vendedor = cadastrarVendedor();
                 System.out.println(vendedor);
+
+            } else if (opcaoUsuario == 3) {
+                Venda venda = cadastrarVenda();
+                System.out.println(venda);
             } else if (opcaoUsuario == 4) {
-                menu = false;
+
+
             }
+
+
+//            // else if (opcaoUsuario == 7) {
+//                menu = false;
+//            }
 
 
         }
