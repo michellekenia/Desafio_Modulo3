@@ -5,6 +5,9 @@ public class Pessoa {
     private String CPF;
     private String email;
 
+    public Pessoa() {
+    }
+
     public Pessoa (String nome, String CPF, String email) {
         this.nome = nome;
         this.CPF = CPF;
