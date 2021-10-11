@@ -18,4 +18,12 @@ public class Sistema {
         System.out.println("Digite 5 para listar os clientes cadastrados");
         System.out.println("Digite 6 para listar as vendas cadastradas");
     }
+
+    public static Vendedor cadastrarVendedor(String nome, String CPF, String email) {
+        nome = capturarDados("Digite o nome do vendedor: ").nextLine();
+        CPF = capturarDados("Digite o CPF do vendedor: ").nextLine();
+        email = capturarDados("Digite o e-mail do vendedor: ").nextLine();
+        return Servico_Vendedor.cadastrarVendedor(nome, CPF, email);
+    }
+
 }
