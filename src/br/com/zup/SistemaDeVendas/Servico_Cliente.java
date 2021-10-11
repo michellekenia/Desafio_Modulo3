@@ -51,16 +51,10 @@ public class Servico_Cliente {
 
     }
 
-
-
-
-
-
-
-
     public static Cliente cadastrarCliente(String nome, String CPF, String email) throws Exception {
         validarEmail(email);
         verificarEmailRepetido(email);
+        verificarCpfRepetido(CPF);
         Cliente cliente = new Cliente(nome, CPF, email);
         listaDeClientes.add(cliente);
         return cliente;
