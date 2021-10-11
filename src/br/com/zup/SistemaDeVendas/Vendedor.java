@@ -2,6 +2,10 @@ package br.com.zup.SistemaDeVendas;
 
 public class Vendedor extends Pessoa {
 
+    public Vendedor() {
+        super();
+    }
+
     public Vendedor(String nome, String CPF, String email) {
         super(nome, CPF, email);
     }

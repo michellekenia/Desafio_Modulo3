@@ -62,7 +62,7 @@ public class Sistema {
         double valor = capturarDados("Digite o valor da venda: ").nextDouble();
         String data = capturarDados("Digite a data da venda: ").nextLine();
 
-        return Servico_Venda.cadastrarVenda(vendedor, cliente,valor,data);
+        return Servico_Venda.cadastrarVenda(cliente, vendedor,valor,data);
     }
 
 

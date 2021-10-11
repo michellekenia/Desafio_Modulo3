@@ -2,6 +2,10 @@ package br.com.zup.SistemaDeVendas;
 
 public class Cliente extends Pessoa {
 
+    public Cliente() {
+        super();
+    }
+
     public Cliente(String nome, String CPF, String email) {
         super(nome, CPF, email);
     }
