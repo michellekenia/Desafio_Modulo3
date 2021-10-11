@@ -28,12 +28,34 @@ public class Servico_Cliente {
 
             if (clienteVerificado) {
                 cliente = clientes;
-                throw new Exception("E-mail já cadastrado. Tente novamente");
+                throw new Exception("E-mail já cadastrado. Tente novamente.");
             }
 
         }
 
     }
+    public static void verificarCpfRepetido(String CPF) throws Exception {
+
+        Cliente cliente = new Cliente();
+
+        for (Cliente clientes : listaDeClientes) {
+
+            boolean clienteVerificado = clientes.getCPF().equals(CPF);
+
+            if (clienteVerificado) {
+                cliente = clientes;
+                throw new Exception("CPF já cadastrado. Tente novamente.");
+            }
+
+        }
+
+    }
+
+
+
+
+
+
 
 
     public static Cliente cadastrarCliente(String nome, String CPF, String email) throws Exception {
@@ -43,10 +65,6 @@ public class Servico_Cliente {
         listaDeClientes.add(cliente);
         return cliente;
     }
-
-
-
-
 
 
     public static void exibirListaDeClientes() {
