@@ -66,10 +66,17 @@ public class Sistema {
         return Servico_Venda.cadastrarVenda(cliente, vendedor, valor, data);
     }
 
-    public void exibirVendedores() {
+    public static void exibirVendedores() {
         Servico_Vendedor.exibirListaDeVendedores();
     }
 
+    public static void exibirClientes() {
+        Servico_Cliente.exibirListaDeClientes();
+    }
+
+    public static void exibirVendas() {
+        Servico_Venda.exibirListaDeVendas();
+    }
 
     public static void executar() {
         boolean menu = true;
@@ -79,25 +86,27 @@ public class Sistema {
             int opcaoUsuario = capturarDados("Digite a opção desejada.").nextInt();
 
             if (opcaoUsuario == 1) {
-                Cliente cliente = cadastrarCliente();
-                System.out.println(cliente);
+                Vendedor vendedor = cadastrarVendedor();
 
             } else if (opcaoUsuario == 2) {
-                Vendedor vendedor = cadastrarVendedor();
-                System.out.println(vendedor);
+                Cliente cliente = cadastrarCliente();
 
             } else if (opcaoUsuario == 3) {
                 Venda venda = cadastrarVenda();
-                System.out.println(venda);
+
             } else if (opcaoUsuario == 4) {
+                exibirVendedores();
 
+            } else if (opcaoUsuario == 5) {
+                exibirClientes();
 
+            } else if (opcaoUsuario == 6) {
+                exibirVendas();
+            } else if (opcaoUsuario == 7) {
+                menu = false;
+            } else {
+                System.out.println("Digite um número válido");
             }
-
-
-//            // else if (opcaoUsuario == 7) {
-//                menu = false;
-//            }
 
 
         }
