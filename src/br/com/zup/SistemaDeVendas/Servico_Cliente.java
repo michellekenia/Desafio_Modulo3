@@ -17,4 +17,10 @@ public class Servico_Cliente {
     public static List<Cliente> getListaDeClientes() {
         return listaDeClientes;
     }
+
+    public static void exibirListaDeClientes() {
+        System.out.println(listaDeClientes);
+    }
+
+
 }
