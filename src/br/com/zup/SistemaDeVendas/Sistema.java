@@ -26,4 +26,10 @@ public class Sistema {
         return Servico_Vendedor.cadastrarVendedor(nome, CPF, email);
     }
 
+    public static Cliente cadastrarCliente(String nome, String CPF, String email) {
+        nome = capturarDados("Digite o nome do cliente: ").nextLine();
+        CPF = capturarDados("Digite o CPF do cliente: ").nextLine();
+        email = capturarDados("Digite o e-mail do cliente: ").nextLine();
+        return Servico_Cliente.cadastrarCliente(nome, CPF, email);
+    }
 }
