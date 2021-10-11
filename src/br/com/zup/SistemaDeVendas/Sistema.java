@@ -8,4 +8,14 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+
+    public static void menu() {
+        System.out.println("Olá, você está no sistema da Loja de Discos Championship Vinyl");
+        System.out.println("Digite 1 para cadastrar um vendedor");
+        System.out.println("Digite 2 para cadastrar um cliente");
+        System.out.println("Digite 3 para cadastrar uma venda");
+        System.out.println("Digite 4 para listar os vendedores cadastrados");
+        System.out.println("Digite 5 para listar os clientes cadastrados");
+        System.out.println("Digite 6 para listar as vendas cadastradas");
+    }
 }
