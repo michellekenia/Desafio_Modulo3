@@ -5,13 +5,14 @@ import java.util.List;
 
 public class Servico_Cliente {
 
-    private List<Cliente> listaDeClientes = new ArrayList<>();
+    private static List<Cliente> cliente = new ArrayList<>();
 
-    public void cadastrarCliente(String nome, String CPF, String email) {
-        Cliente cliente = new Cliente(nome,CPF,email);
-        listaDeClientes.add(cliente);
+        private static List<Cliente> listaDeClientes = new ArrayList<>();
+
+        public static Cliente cadastrarCliente(String nome, String CPF, String email) {
+            Cliente cliente = new Cliente(nome, CPF, email);
+            listaDeClientes.add(cliente);
+            return cliente;
+        }
 
     }
-
-
-}
