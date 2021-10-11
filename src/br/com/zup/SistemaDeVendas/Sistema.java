@@ -19,17 +19,52 @@ public class Sistema {
         System.out.println("Digite 6 para listar as vendas cadastradas");
     }
 
-    public static Vendedor cadastrarVendedor(String nome, String CPF, String email) {
-        nome = capturarDados("Digite o nome do vendedor: ").nextLine();
-        CPF = capturarDados("Digite o CPF do vendedor: ").nextLine();
-        email = capturarDados("Digite o e-mail do vendedor: ").nextLine();
+    public static Vendedor cadastrarVendedor() {
+        String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
+        String CPF = capturarDados("Digite o CPF do vendedor: ").nextLine();
+        String email = capturarDados("Digite o e-mail do vendedor: ").nextLine();
         return Servico_Vendedor.cadastrarVendedor(nome, CPF, email);
     }
 
-    public static Cliente cadastrarCliente(String nome, String CPF, String email) {
-        nome = capturarDados("Digite o nome do cliente: ").nextLine();
-        CPF = capturarDados("Digite o CPF do cliente: ").nextLine();
-        email = capturarDados("Digite o e-mail do cliente: ").nextLine();
+    public static Cliente cadastrarCliente() {
+        String nome = capturarDados("Digite o nome do cliente: ").nextLine();
+        String CPF = capturarDados("Digite o CPF do cliente: ").nextLine();
+        String email = capturarDados("Digite o e-mail do cliente: ").nextLine();
         return Servico_Cliente.cadastrarCliente(nome, CPF, email);
     }
+
+    public static Venda cadastrarVenda() {
+        String email = capturarDados("Digite o e-mail do vendedor responsável: ").nextLine();
+
+        Vendedor vendedor = new Vendedor();
+
+        for (Vendedor vendedores : Servico_Vendedor.getListaDeVendedores()) {
+
+            boolean vendedorVerificado = vendedores.getEmail().equals(email);
+
+            if (vendedorVerificado) {
+                vendedor = vendedores;
+            }
+        }
+        String CPF = capturarDados("Digite o CPF do cliente: ").nextLine();
+
+        Cliente cliente = new Cliente();
+
+        for (Cliente clientes : Servico_Cliente.getListaDeClientes()) {
+
+            boolean clienteVerificado = clientes.getCPF().equals(CPF);
+
+            if (clienteVerificado) {
+                cliente = clientes;
+            }
+        }
+
+        double valor = capturarDados("Digite o valor da venda: ").nextDouble();
+        String data = capturarDados("Digite a data da venda: ").nextLine();
+
+        return Servico_Venda.cadastrarVenda(vendedor, cliente,valor,data);
+    }
+
+
 }
+

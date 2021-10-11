@@ -14,4 +14,7 @@ public class Servico_Cliente {
         return cliente;
     }
 
+    public static List<Cliente> getListaDeClientes() {
+        return listaDeClientes;
+    }
 }

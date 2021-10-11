@@ -13,4 +13,9 @@ public class Servico_Vendedor {
         return vendedor;
 
     }
+
+    public static List<Vendedor> getListaDeVendedores() {
+        return listaDeVendedores;
+    }
+
 }
