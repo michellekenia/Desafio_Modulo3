@@ -17,6 +17,7 @@ public class Sistema {
         System.out.println("Digite 4 para listar os vendedores cadastrados");
         System.out.println("Digite 5 para listar os clientes cadastrados");
         System.out.println("Digite 6 para listar as vendas cadastradas");
+        System.out.println("Digite 7 para sair do sistema");
     }
 
     public static Vendedor cadastrarVendedor() {
@@ -62,7 +63,31 @@ public class Sistema {
         double valor = capturarDados("Digite o valor da venda: ").nextDouble();
         String data = capturarDados("Digite a data da venda: ").nextLine();
 
-        return Servico_Venda.cadastrarVenda(cliente, vendedor,valor,data);
+        return Servico_Venda.cadastrarVenda(cliente, vendedor, valor, data);
+    }
+
+    public static void executar() {
+        boolean menu = true;
+
+        while (menu) {
+            menu();
+            int opcaoUsuario = capturarDados("Digite a opção desejada").nextInt();
+
+            if (opcaoUsuario == 1) {
+                Cliente cliente = cadastrarCliente();
+                System.out.println(cliente);
+
+            } else if (opcaoUsuario == 2) {
+                Vendedor vendedor = cadastrarVendedor();
+                System.out.println(vendedor);
+            } else if (opcaoUsuario == 4) {
+                menu = false;
+            }
+
+
+        }
+
+
     }
 
 
