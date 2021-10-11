@@ -17,6 +17,25 @@ public class Servico_Vendedor {
         }
     }
 
+    public static void verificarEmailRepetido(String email) throws Exception {
+
+       Vendedor vendedor = new Vendedor();
+
+        for (Vendedor vendedores : listaDeVendedores) {
+
+            boolean vendedorVerificado = vendedores.getEmail().equals(email);
+
+            if (vendedorVerificado) {
+                vendedor = vendedores;
+                throw new Exception("E-mail já cadastrado. Tente novamente.");
+            }
+
+        }
+
+    }
+
+
+
     public static Vendedor cadastrarVendedor(String nome, String CPF, String email) {
         Vendedor vendedor = new Vendedor(nome, CPF, email);
         listaDeVendedores.add(vendedor);
