@@ -20,7 +20,7 @@ public class Sistema {
         System.out.println("Digite 7 para sair do sistema");
     }
 
-    public static Vendedor cadastrarVendedor() {
+    public static Vendedor cadastrarVendedor() throws Exception {
         String nome = capturarDados("Digite o nome do vendedor: ").nextLine();
         String CPF = capturarDados("Digite o CPF do vendedor: ").nextLine();
         String email = capturarDados("Digite o e-mail do vendedor: ").nextLine();
@@ -34,7 +34,7 @@ public class Sistema {
         return Servico_Cliente.cadastrarCliente(nome, CPF, email);
     }
 
-    public static Venda cadastrarVenda() {
+    public static Venda cadastrarVenda() throws Exception {
         String email = capturarDados("Digite o e-mail do vendedor responsável: ").nextLine();
 
         Vendedor vendedor = new Vendedor();
@@ -78,10 +78,10 @@ public class Sistema {
         Servico_Venda.exibirListaDeVendas();
     }
 
-    public static void executar() {
-        boolean menu = true;
+    public static boolean executar() throws Exception {
+        boolean continuarExecucao = true;
 
-        while (menu) {
+        while (continuarExecucao) {
             menu();
             int opcaoUsuario = capturarDados("Digite a opção desejada.").nextInt();
 
@@ -103,7 +103,8 @@ public class Sistema {
             } else if (opcaoUsuario == 6) {
                 exibirVendas();
             } else if (opcaoUsuario == 7) {
-                menu = false;
+                continuarExecucao = false;
+                System.out.println("Você está saindo do sistema. Até logo!");
             } else {
                 System.out.println("Digite um número válido");
             }
@@ -111,7 +112,7 @@ public class Sistema {
 
         }
 
-
+        return continuarExecucao;
     }
 
 

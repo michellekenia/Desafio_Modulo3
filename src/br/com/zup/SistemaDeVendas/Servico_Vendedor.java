@@ -19,7 +19,7 @@ public class Servico_Vendedor {
 
     public static void verificarEmailRepetido(String email) throws Exception {
 
-       Vendedor vendedor = new Vendedor();
+        Vendedor vendedor = new Vendedor();
 
         for (Vendedor vendedores : listaDeVendedores) {
 
@@ -34,9 +34,27 @@ public class Servico_Vendedor {
 
     }
 
+    public static void verificarCpfRepetido(String CPF) throws Exception {
 
+        Vendedor vendedor = new Vendedor();
 
-    public static Vendedor cadastrarVendedor(String nome, String CPF, String email) {
+        for (Vendedor vendedores : listaDeVendedores) {
+
+            boolean vendedorVerificado = vendedores.getCPF().equals(CPF);
+
+            if (vendedorVerificado) {
+                vendedor = vendedores;
+                throw new Exception("CPF já cadastrado. Tente novamente.");
+            }
+
+        }
+
+    }
+
+    public static Vendedor cadastrarVendedor(String nome, String CPF, String email) throws Exception{
+        validarEmail(email);
+        verificarEmailRepetido(email);
+        verificarCpfRepetido(CPF);
         Vendedor vendedor = new Vendedor(nome, CPF, email);
         listaDeVendedores.add(vendedor);
         return vendedor;
