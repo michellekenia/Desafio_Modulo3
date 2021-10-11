@@ -9,9 +9,9 @@ public class Vendedor extends Pessoa {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("\nDigite o nome do vendedor: " + getNome());
-        retorno.append("\nDigite o CPF do vendedor: " + getCPF());
-        retorno.append("\nDigite o e-mail do vendeor: " + getEmail());
+        retorno.append("\nNome do vendedor: " + getNome());
+        retorno.append("\nCPF do vendedor: " + getCPF());
+        retorno.append("\nE-mail do vendeor: " + getEmail());
         return retorno.toString();
     }
 }
