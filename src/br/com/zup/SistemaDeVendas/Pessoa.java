@@ -1,11 +1,11 @@
 package br.com.zup.SistemaDeVendas;
 
-public class asbtract Pessoa {
-    String nome;
-    String CPF;
-    String email;
+public class Pessoa {
+    private String nome;
+    private String CPF;
+    private String email;
 
-    public asbtract(String nome, String CPF, String email) {
+    public Pessoa (String nome, String CPF, String email) {
         this.nome = nome;
         this.CPF = CPF;
         this.email = email;
